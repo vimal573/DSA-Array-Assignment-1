@@ -9,11 +9,16 @@
 // Output: [2,3]
 
 var findErrorNums = function (nums) {
-  for (let i = 1; i < nums.length; i++) {
-    if (nums[i - 1] === nums[i]) {
-      return [nums[i - 1], nums[i] + 1];
-    }
-  }
+  const n = nums.length;
+  const totalSum = (n * (n + 1)) / 2;
+
+  const numSet = new Set(nums);
+  let setSum = 0;
+  numSet.forEach(num => (setSum += num));
+
+  const numSum = nums.reduce((curr, acc) => curr + acc);
+
+  return [numSum - setSum, totalSum - setSum];
 };
 
-findErrorNums([2, 2]);
+console.log(findErrorNums([1, 2, 2, 4]));
