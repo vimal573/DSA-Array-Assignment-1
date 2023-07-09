@@ -16,5 +16,5 @@ const containsDuplicate = nums => {
 
 console.log(containsDuplicate([1, 2, 3, 1]));
 
-// TC: O(n)
+// TC: O(logn)
 // SC: O(1)
