@@ -7,24 +7,21 @@
 
 const searchInsert = (nums, target) => {
   let start = 0;
-  let end = nums.length;
+  let end = nums.length - 1;
 
-  while (start <= end) {
-    let mid = (start + end) / 2;
+  while (start < end) {
+    const mid = Math.floor((start + end) / 2);
 
-    if (nums[mid] === target) {
-      return mid;
-    } else if (target > nums[mid]) {
+    if (target > nums[mid]) {
       start = mid + 1;
     } else {
-      end = mid - 1;
+      end = mid;
     }
-
-    return end;
   }
+  return end;
 };
 
-console.log(searchInsert([1, 3, 5, 6], 5));
+console.log(searchInsert([1, 3, 5, 6], 6));
 
 // TC: O(log n)
 // SC: O(1)
