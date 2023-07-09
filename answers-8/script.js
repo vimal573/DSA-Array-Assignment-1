@@ -22,3 +22,7 @@ var findErrorNums = function (nums) {
 };
 
 console.log(findErrorNums([1, 2, 2, 4]));
+
+
+// TC: O(n)
+// SC: O(1)

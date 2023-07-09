@@ -14,7 +14,7 @@ const searchInsert = (nums, target) => {
 
     if (nums[mid] === target) {
       return mid;
-    } else if (target > mid) {
+    } else if (target > nums[mid]) {
       start = mid + 1;
     } else {
       end = mid - 1;
@@ -24,7 +24,7 @@ const searchInsert = (nums, target) => {
   }
 };
 
-console.log(searchInsert([1, 3, 5, 6], 2));
+console.log(searchInsert([1, 3, 5, 6], 5));
 
 // TC: O(log n)
 // SC: O(1)
